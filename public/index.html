@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberLiga</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/darkmode.js" defer></script>
+    <style>
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+        .dark-mode .bg-white { background-color: #333333; }
+        .dark-mode .text-gray-700 { color: #e0e0e0; }
+        .dark-mode .text-gray-900 { color: #ffffff; }
+        .dark-mode .border-gray-300 { border-color: #555555; }
+        .dark-mode .hover\:bg-gray-100:hover { background-color: #444444; }
+    </style>
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.classList.toggle('hidden');
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const darkModeButton = document.getElementById('dark-mode-button');
+            if (document.body.classList.contains('dark-mode')) {
+                darkModeButton.innerHTML = '<span class="material-icons">light_mode</span>'; // Замените на вашу иконку
+            } else {
+                darkModeButton.innerHTML = '<span class="material-icons">dark_mode</span>'; // Замените на вашу иконку
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-4 sm:px-6 py-3">
+            <div class="flex flex-row justify-between items-center">
+                <div class="flex items-center">
+                    <a href="index.html">
+                        <img src="img/logo.png" alt="Logo" class="h-10 w-10">
+                    </a>
+                </div>
+                <nav class="flex items-center space-x-4 relative">
+                    <div class="relative">
+                        <button onclick="toggleDropdown()" class="text-gray-700 hover:text-gray-900">Menu</button>
+                        <div id="dropdown" class="absolute left-0 z-10 hidden bg-white shadow-lg rounded mt-2">
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Discipline</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Tournament list</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pricing</a>
+                            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+                        </div>
+                    </div>
+                    <a href="signin.html" class="text-gray-700 hover:text-gray-900 border border-gray-300 rounded px-4 py-2">Sign in</a>
+                    <a href="register.html" class="text-white bg-black rounded px-4 py-2">Register</a>
+                    <button id="dark-mode-button" onclick="toggleDarkMode()" class="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 hover:bg-gray-300 transition duration-300">
+                        <span class="material-icons"></span> <!-- Замените на вашу иконку -->
+                    </button>
+                
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-6 px-4 sm:px-6 h-screen flex flex-col justify-center items-center">
+        <div id="content" class="text-center">
+            <h1 class="text-3xl sm:text-5xl font-bold text-gray-900 mb-4">Учебный Портал Программирования</h1>
+            <p class="text-lg sm:text-xl text-gray-500 max-w-2xl">Добро пожаловать на наш сайт, где вы можете изучать программирование! Мы предлагаем курсы по различным языкам программирования, практические задания и поддержку сообщества, чтобы помочь вам стать успешным разработчиком.</p>
+            <a href="courses.html" class="mt-4 inline-block text-white bg-blue-600 rounded px-4 py-2 hover:bg-blue-700">Начать обучение</a>
+        </div>
+    </main>
+</body>
+</html>
